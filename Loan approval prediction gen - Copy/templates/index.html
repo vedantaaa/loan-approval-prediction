@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Status Prediction</title>
+
+   <style>
+    body{
+        background-image: url('/static/bg2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        background-attachment: fixed;
+        position: fixed;
+    }
+    /*form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }*/
+    label{
+        width:100px;
+        display: inline-block;
+        margin: 4px;
+    }
+    #forms{
+        color:white;
+        width: 500px;
+        display: grid;
+        padding: 4px;
+        place-items: center;
+        margin-top: 72px;
+        margin-left: 505px;
+    }
+    
+    
+    h1{
+        text-align: center;
+        color: white;
+        margin-left: 510px;
+        margin-top: 95px;
+    }
+    input{
+        border-radius: 6px;
+    }
+    button{
+        width: 100px;
+        margin: 10px;
+        margin-left: 129px;
+        margin-top: 65px;
+        padding: 5px;
+        font-size: 150%;
+        background-color: #F48FB1;
+        border: #AD1457;
+        border-radius: 8px;
+    }
+   </style>
+
+</head>
+<body>
+    <h1>Loan Status Prediction</h1>
+    <div id="forms">
+    <form action="/predict" method="post">
+        <!-- Update the form fields to match the case used during model training -->
+        <label for="no_of_dependents">Number of Dependents:</label>
+        <input type="text" id="no_of_dependents" name="no_of_dependents" required><br>
+
+        <label for="education">Education:</label>
+        <select id="education" name="education" required>
+            <option value="0">Not Graduate</option>
+            <option value="1">Graduate</option>
+        </select><br>
+
+        <label for="self_employed">Self Employed:</label>
+        <select id="self_employed" name="self_employed" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="income_annum">Income Annum:</label> <!-- Update the name to match the case used during training -->
+        <input type="text" id="income_annum" name="income_annum" required><br>
+
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="text" id="loan_amount" name="loan_amount" required><br>
+
+        <label for="loan_term">Loan Term (Years):</label>
+        <input type="number" id="loan_term" name="loan_term" required min="1" max="100"><br>
+
+        <label for="cibil_score">CIBIL Score:</label>
+        <input type="number" id="cibil_score" name="cibil_score" required min="300" max="900"><br>
+
+
+        <label for="movable_assets">Movable Assets:</label>
+        <input type="text" id="movable_assets" name="movable_assets" required><br>
+
+        <label for="immovable_assets">Immovable Assets:</label>
+        <input type="text" id="immovable_assets" name="immovable_assets" required><br>
+
+        <button type="submit">Predict</button>
+
+    </form>
+</div>
+</body>
+</html>

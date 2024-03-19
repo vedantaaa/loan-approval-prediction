@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Status Prediction Result</title>
+    <style>
+        body{
+            background-image: url('/static/bg3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            background-attachment: fixed;
+            position: fixed;
+        }
+        h1{
+            text-align: center;
+            justify-content: center;
+            margin-left: 19em;
+            margin-top: 6em;
+            color: white;
+        }
+        p{
+            margin-left: 27em;
+            color: white;
+            font-size: 21px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>The predicted loan status is: {{ prediction }}</p>
+</body>
+</html>
